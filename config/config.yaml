@@ -1,0 +1,53 @@
+project:
+  project_id: "hackathon-playground-461714"
+  location: "us-central1"
+
+bigquery:
+  dataset_id: "synthetic_customer_conversations"
+  tables:
+    customer_messages: "customer_support_translated"
+
+gemini:
+  model_name: "gemini-pro"
+  temperature: 0.2
+  max_output_tokens: 1024
+  top_p: 0.8
+  top_k: 40
+
+model:
+  categories:
+    - CANCEL_REQUEST
+    - EXCHANGE
+    - STATUS_RETURN
+    - FW_SHIPPING_PROCESS
+    - HOW_TO_RETURN
+    - NO_PROOF
+    - OTHER
+    - PROOF_COMPLAINT
+    - RECEIPT
+    - RETURN
+    - SHIPPING
+    - STATUS_SHIPPING
+    - WRONG_PRODUCT
+    - CANCEL
+    - COMPLAINT
+    - DISCOUNT_CODE
+    - WRONG_ADDRESS
+    - MISSING
+    - PRODUCT
+    - PROFORMA_INVOICE
+    - PRICE_MATCH
+    - PRICE
+    - UNSUBSCRIBE
+    - 3F2
+    - UNCLEAR_C_REQUEST
+    - UNCLEAR_C_REQUEST
+  sentiment_threshold: 0.7
+  human_intervention_categories:
+    - PROOF_COMPLAINT
+    - MISSING
+    - WRONG_ADDRESS
+
+api:
+  host: "0.0.0.0"
+  port: 8080 
